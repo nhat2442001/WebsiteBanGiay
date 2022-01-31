@@ -1,0 +1,12 @@
+﻿
+
+<ul>
+    @foreach (var item in ViewBag.HangGiay)
+    {
+
+        <li>
+            <a href="@Url.Action("TatCaSanPham","SanPham",new {MaNCC=item.Key})">@item.Value</a>
+        </li>
+    }
+</ul>
+

@@ -1,0 +1,444 @@
+﻿@model DoAnCSDL_WebBanGiay.Models.SanPham
+@using DoAnCSDL_WebBanGiay.Models
+
+@{
+
+    Layout = null;
+}
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Downy Shoes an Ecommerce Category Bootstrap Responsive Website Template | Single :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Downy Shoes Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- //custom-theme -->
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/css/shop.css" type="text/css" media="screen" property="" />
+    <link href="~/Content/css/style7.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/css/flexslider.css" type="text/css" media="screen" />
+    <link href="~/Content/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+    <!-- Owl-carousel-CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/css/jquery-ui1.css">
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome-icons -->
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+          rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+<body>
+    <!-- banner -->
+    <div class="banner_top innerpage" id="home">
+        <div class="wrapper_top_w3layouts">
+            <div class="header_agileits">
+                <div class="logo inner_page_log">
+                    <h1><a class="navbar-brand" href="index.html"><span>Downy</span> <i>Shoes</i></a></h1>
+                </div>
+                <div class="overlay overlay-contentpush">
+                    <button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+
+                    <nav>
+                        <ul>
+                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="404.html">Team</a></li>
+                            <li><a href="shop.html">Shop Now</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="mobile-nav-button">
+                    <button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                </div>
+                <!-- cart details -->
+                <div class="top_nav_right">
+
+                    <button class="top_shoe_cart"><a text decoration:none href="@Url.Action("Index", "GioHang")"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></button>
+
+                </div>
+            </div>
+        </div>
+        <!-- //cart details -->
+        <!-- search -->
+        <div class="search_w3ls_agileinfo">
+            <div class="cd-main-header">
+                <ul class="cd-header-buttons">
+                    <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+                </ul>
+            </div>
+            <div id="cd-search" class="cd-search">
+                <form action="#" method="post">
+                    <input name="Search" type="search" placeholder="Click enter after typing...">
+                </form>
+            </div>
+        </div>
+        <!-- //search -->
+        <div class="clearfix"></div>
+        <!-- /banner_inner -->
+        <div class="services-breadcrumb_w3ls_agileinfo">
+            <div class="inner_breadcrumb_agileits_w3">
+
+                <ul class="short">
+                    <li><a href="index.html">Home</a><i>|</i></li>
+                    <li>Single</li>
+                </ul>
+            </div>
+        </div>
+        <!-- //banner_inner -->
+    </div>
+    <!-- //banner -->
+    <!-- top Products -->
+    <div class="ads-grid_shop">
+        <div class="shop_inner_inf">
+            <div class="col-md-4 single-right-left ">
+                <div class="grid images_3_of_2">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            @{
+                                string image = Model.HinhAnh;
+                                image = image.Substring(0, image.Length - 5);
+                                for (int i = 1; i <= 3; i++)
+                                {
+                                    <li data-thumb="@Url.Content("~/Content/" + image + i + ".png")">
+                                        <div class="thumb-image"> <img src="@Url.Content("~/Content/" + image + i + ".png")" data-imagezoom="true" class="img-responsive"> </div>
+                                    </li>
+                                }
+                            }
+
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 single-right-left simpleCart_shelfItem">
+                <h3>@Model.TenSP</h3>
+                <i class="fas fa-eye">@Model.LuotBinhChon</i>
+                <i class="fas fa-shopping-cart">@Model.SoLanMua</i>
+                <p>
+                    <span class="item_price">@String.Format("{0:#,###} đồng", Model.Gia)</span>
+                </p>
+                <div class="color-quality">
+                    <div class="color-quality-right">
+                        <h5>Size: </h5>
+                        <select onchange="getSelectValue(this)" id="size" name="size" class="frm-field required sect">
+                            <option value="wrong">--Chọn Size--</option>
+                            @foreach (var item in ViewBag.Size)
+                            {
+                                <option value="@item.Size">@item.Size</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <script>
+                    function getSelectValue(ddlitem) {
+                        var selected = ddlitem.value;
+                        var seltext = ddlitem.options[ddlitem.selectedIndex].innerHTML;
+                        $('#txtsize').val(seltext);
+                    }
+                </script>
+                <form action='@Url.Action("AddToCart","GioHang")' method="get">
+                    <div class="occasion-cart">
+                        <div class="shoe single-item single_page_b">
+                            @*<input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="add" value="1">
+                        <input type="hidden" name="shoe_item" value="@Model.TenSP">
+                        <input type="hidden" name="amount" value=@Model.Gia>*@
+                            <input type="hidden" name="MaSP" value="@Model.MaSP">
+                            <input type="hidden" id="txtsize" name="txtsize">
+                            <button type="submit" class="button button3">Thêm vào giỏ hàng</button>
+                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h4>Bảng Size</h4>
+                <table class="table table-bordered">
+                    <caption style="position:absolute;left:-2000px;font-size:0;width:0;height:0;overflow:hidden;visibility:hidden">Bảng size</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row" data-column="0" data-row="1" class="even">US – Men's</th>
+                            <td data-column="1" data-row="1" class="odd">3.5</td>
+                            <td data-column="2" data-row="1" class="even">4</td>
+                            <td data-column="3" data-row="1" class="odd">4.5</td>
+                            <td data-column="4" data-row="1" class="even">5</td>
+                            <td data-column="5" data-row="1" class="odd">5.5</td>
+                            <td data-column="6" data-row="1" class="even">6</td>
+                            <td data-column="7" data-row="1" class="odd">6.5</td>
+                            <td data-column="8" data-row="1" class="even">7</td>
+                            <td data-column="9" data-row="1" class="odd">7.5</td>
+                            <td data-column="10" data-row="1" class="even">8</td>
+                            <td data-column="11" data-row="1" class="odd">8.5</td>
+                            <td data-column="12" data-row="1" class="even">9</td>
+                            <td data-column="13" data-row="1" class="odd">9.5</td>
+                            <td data-column="14" data-row="1" class="even">10</td>
+                            <td data-column="15" data-row="1" class="odd">10.5</td>
+                            <td data-column="16" data-row="1" class="even">11</td>
+                        </tr>
+                        <tr><th scope="row" data-column="0" data-row="2" class="even">US – Women's</th><td data-column="1" data-row="2" class="odd">5</td><td data-column="2" data-row="2" class="even">5.5</td><td data-column="3" data-row="2" class="odd">6</td><td data-column="4" data-row="2" class="even">6.5</td><td data-column="5" data-row="2" class="odd">7</td><td data-column="6" data-row="2" class="even">7.5</td><td data-column="7" data-row="2" class="odd">8</td><td data-column="8" data-row="2" class="even">8.5</td><td data-column="9" data-row="2" class="odd">9</td><td data-column="10" data-row="2" class="even">9.5</td><td data-column="11" data-row="2" class="odd">10</td><td data-column="12" data-row="2" class="even">10.5</td><td data-column="13" data-row="2" class="odd">11</td><td data-column="14" data-row="2" class="even">11.5</td><td data-column="15" data-row="2" class="odd">12</td><td data-column="16" data-row="2" class="even">12.5</td></tr>
+                        <tr><th scope="row" data-column="0" data-row="3" class="even">UK</th><td data-column="1" data-row="3" class="odd">3</td><td data-column="2" data-row="3" class="even">3.5</td><td data-column="3" data-row="3" class="odd">4</td><td data-column="4" data-row="3" class="even">4.5</td><td data-column="5" data-row="3" class="odd">5</td><td data-column="6" data-row="3" class="even">5.5</td><td data-column="7" data-row="3" class="odd">6</td><td data-column="8" data-row="3" class="even">6</td><td data-column="9" data-row="3" class="odd">6.5</td><td data-column="10" data-row="3" class="even">7</td><td data-column="11" data-row="3" class="odd">7.5</td><td data-column="12" data-row="3" class="even">8</td><td data-column="13" data-row="3" class="odd">8.5</td><td data-column="14" data-row="3" class="even">9</td><td data-column="15" data-row="3" class="odd">9.5</td><td data-column="16" data-row="3" class="even">10</td></tr>
+                        <tr><th scope="row" data-column="0" data-row="4" class="even">CM</th><td data-column="1" data-row="4" class="odd">22.5</td><td data-column="2" data-row="4" class="even">23</td><td data-column="3" data-row="4" class="odd">23.5</td><td data-column="4" data-row="4" class="even">23.5</td><td data-column="5" data-row="4" class="odd">24</td><td data-column="6" data-row="4" class="even">24</td><td data-column="7" data-row="4" class="odd">24.5</td><td data-column="8" data-row="4" class="even">25</td><td data-column="9" data-row="4" class="odd">25.5</td><td data-column="10" data-row="4" class="even">26</td><td data-column="11" data-row="4" class="odd">26.5</td><td data-column="12" data-row="4" class="even">27</td><td data-column="13" data-row="4" class="odd">27.5</td><td data-column="14" data-row="4" class="even">28</td><td data-column="15" data-row="4" class="odd">28.5</td><td data-column="16" data-row="4" class="even">29</td></tr>
+                        <tr><th scope="row" data-column="0" data-row="5" class="even">EU</th><td data-column="1" data-row="5" class="odd">35.5</td><td data-column="2" data-row="5" class="even">36</td><td data-column="3" data-row="5" class="odd">36.5</td><td data-column="4" data-row="5" class="even">37.5</td><td data-column="5" data-row="5" class="odd">38</td><td data-column="6" data-row="5" class="even">38.5</td><td data-column="7" data-row="5" class="odd">39</td><td data-column="8" data-row="5" class="even">40</td><td data-column="9" data-row="5" class="odd">40.5</td><td data-column="10" data-row="5" class="even">41</td><td data-column="11" data-row="5" class="odd">42</td><td data-column="12" data-row="5" class="even">42.5</td><td data-column="13" data-row="5" class="odd">43</td><td data-column="14" data-row="5" class="even">44</td><td data-column="15" data-row="5" class="odd">44.5</td><td data-column="16" data-row="5" class="even">45</td></tr>
+                    </tbody>
+                </table>                
+            </div>
+            <div class="clearfix"> </div>
+            <!--/tabs-->
+            <div class="responsive_tabs">
+                <div id="horizontalTab">
+                    <ul class="resp-tabs-list">
+                        <li>Mô tả</li>
+                        <li>Nhận xét</li>
+                        <li>Nhà cung cấp</li>
+                    </ul>
+                    <div class="resp-tabs-container">
+                        <!--/tab_one-->
+                        <div class="tab1">
+                            <div class="single_page">
+                                <h6>@Model.TenSP</h6>
+                                <p>
+                                    @Model.MoTa
+                                </p>
+                                <p class="para">
+                                </p>
+                            </div>
+                        </div>
+                        <!--//tab_one-->
+                        <div class="tab2">
+                            <div class="single_page">
+                                <div class="bootstrap-tab-text-grids">
+                                    <div class="bootstrap-tab-text-grid">
+                                        <div class="bootstrap-tab-text-grid-left">
+                                            <img src="~/Content/images/t1.jpg" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="bootstrap-tab-text-grid-right">
+                                            <ul>
+                                                <li><a href="#">Admin</a></li>
+                                                <li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i> Reply</a></li>
+                                            </ul>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget.Ut enim ad minima veniam,
+                                                quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+                                                autem vel eum iure reprehenderit.
+                                            </p>
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                    <div class="add-review">
+                                        <h4>add a review</h4>
+                                        <form action="#" method="post">
+                                            <input type="text" name="Name" required="Name">
+                                            <input type="email" name="Email" required="Email">
+                                            <textarea name="Message" required=""></textarea>
+                                            <input type="submit" value="SEND">
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab3">
+                            <div class="single_page">
+                                <img src=" @Url.Content("~/Content/" +ViewBag.NCC.Logo)" alt=" " class="img-responsive" width="60" height="40">
+                                <h6>@ViewBag.NCC.TenNCC</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//tabs-->
+            <div class="clearfix"></div>
+        </div>
+    </div> 
+    <!-- //top Products -->
+    <!-- footer -->
+    <div class="footer_agileinfo_w3">
+        <div class="footer_inner_info_w3ls_agileits">
+            <div class="col-md-3 footer-left">
+                <h2><a href="index.html"><span>1</span>One Shoes </a></h2>
+                <p>Mang đến trải nghiệm tốt nhất cho bạn</p>
+            </div>
+            <div class="col-md-9 footer-right">
+                <div class="sign-grds">
+                    <div class="col-md-4 sign-gd">
+                        <h4>Thông tin <span>Website</span> </h4>
+                        <ul>
+                            <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                            <li><a href="@Url.Action("TatCaSanPham","SanPham")">Mua sắm</a></li>
+                            <li><a href="https://www.facebook.com/nhat.duong.5817/">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 sign-gd-two">
+                        <h4>Thông tin<span> cửa hàng</span></h4>
+                        <div class="address">
+                            <div class="address-grid">
+                                <div class="address-left">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                </div>
+                                <div class="address-right">
+                                    <h6>Số điện thoại</h6>
+                                    <p> 0359854060</p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="address-grid">
+                                <div class="address-left">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="address-right">
+                                    <h6>Email Address</h6>
+                                    <p>Email :<a href="#"> 1954052067nhat@@Ou.edu.vn</a></p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="address-grid">
+                                <div class="address-left">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                                <div class="address-right">
+                                    <h6>Địa chỉ</h6>
+                                    <p>
+                                        371 Nguyễn Kiệm, Q.Gò Vấp, TP.HCM
+                                    </p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <p class="copy-right-w3ls-agileits">© 2018 1One Shoes. All rights reserved | Design by <a href="http://w3layouts.com/">w3layouts</a></p>
+        </div>
+    </div>
+    <!-- //footer -->
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!-- js -->
+    <script type="text/javascript" src="~/Content/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <!-- cart-js -->
+    <script src="~/Content/js/minicart.js"></script>
+    <script>
+        shoe.render();
+
+        shoe.cart.on('shoe_checkout', function (evt) {
+            var items, len, i;
+
+            if (this.subtotal() > 0) {
+                items = this.items();
+
+                for (i = 0, len = items.length; i < len; i++) { }
+            }
+        });
+    </script>
+    <!-- //cart-js -->
+    <!-- /nav -->
+    <script src="~/Content/js/modernizr-2.6.2.min.js"></script>
+    <script src="~/Content/js/classie.js"></script>
+    <script src="~/Content/js/demo1.js"></script>
+    <!-- //nav -->
+    <!-- single -->
+    <script src="~/Content/js/imagezoom.js"></script>
+    <!-- single -->
+    <!-- script for responsive tabs -->
+    <script src="~/Content/js/easy-responsive-tabs.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true, // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+            $('#verticalTab').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true
+            });
+        });
+    </script>
+    <!-- FlexSlider -->
+    <script src="~/Content/js/jquery.flexslider.js"></script>
+    <script>
+
+        // Can also be used with $(document).ready()
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
+    <!-- //FlexSlider-->
+    <!--search-bar-->
+    <script src="~/Content/js/search.js"></script>
+    <!--//search-bar-->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/Content/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Content/js/easing.js"></script>
+    <script type="text/javascript">
+
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smoth-scrolling -->
+    <script type="text/javascript" src="~/Content/js/bootstrap-3.1.1.min.js"></script>
+</body>
+
+<style>
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button3 {
+        background-color: white;
+        color: black;
+        border: 2px solid #FC636B;
+    }
+
+        .button3:hover {
+            background-color: #FC636B;
+            color: white;
+        }
+</style>

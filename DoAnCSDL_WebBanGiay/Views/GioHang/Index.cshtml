@@ -1,0 +1,169 @@
+﻿@model List<DoAnCSDL_WebBanGiay.Models.CartItem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+<script type="application/x-javascript">
+    addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    }
+</script>
+<!-- //custom-theme -->
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/shop.css" type="text/css" media="screen" property="" />
+<link href="~/Content/css/style7.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Owl-carousel-CSS -->
+<link rel="stylesheet" type="text/css" href="~/Content/css/checkout.css">
+<link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome-icons -->
+<link href="~/Content/css/font-awesome.css" rel="stylesheet">
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+      rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+
+@if (Model == null)
+{
+    <p class="text text-info">Chưa có sản phẩm nào trong giỏ</p>
+}
+else
+{
+    <div class="ads-grid_shop">
+        <div class="shop_inner_inf">
+            <div class="privacy about">
+                <h3>Giỏ<span> hàng</span></h3>
+                <div class="checkout-right">
+                    <h4>Số lượng sản phẩm: <span>@Model.Sum(m => m.SoLuong)</span></h4>
+                    <table class="timetable_sub">
+                        <thead>
+                            <tr>
+                                <th>SL No.</th>
+                                <th>Product</th>
+                                <th>Số lượng</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Size</th>
+                                <th>Giá</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="rem1">
+                                    <td class="invert">1</td>
+                                    <td class="invert-image"><img src="@Url.Content("~/Content/" + item.HinhSP)" style="width:100px;height:120px;" alt=" " class="img-responsive"></td>
+                                    <td class="invert">
+                                        <div class="quantity">
+                                            <div class="quantity-select">
+                                                <form action="@Url.Action("UpdateCart")" method="get">
+                                                    <input type="number" value="@item.SoLuong" min="1" name="txtSoLuong" id="txtSoLuong" />
+                                                    <button type="submit" class="button button3" style="height:50px;width:150px">Cập nhật</button>
+                                                    <input type="hidden" name="MaszSP" value="@item.MaSizeSp">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="invert">@item.TenSP</td>
+                                    <td class="invert">@item.Size</td>
+                                    <td class="invert">@item.DonGia.ToString("#,###") đồng</td>
+                                    <td class="invert">
+                                        <div class="rem">
+                                            <a href="@Url.Action("Delete", new { MaSPsize = item.MaSizeSp })"
+                                               onclick="return confirm(' Xóa mặt hàng này')">X</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="checkout-left">
+                    <div class="col-md-4 checkout-left-basket">
+                        <form action='@Url.Action("TatCaSanPham", "SanPham")' method="get">
+                            <button type="submit" class="button button3">Tiếp tục mua hàng</button>
+                        </form>
+                        <ul>
+                            @foreach (var item in Model)
+                            {
+                                string gia = (@item.DonGia * @item.SoLuong).ToString("#,###");
+                                <li>@item.TenSP-@item.Size- X @item.SoLuong<i>-</i> <span>@gia đồng</span></li>
+
+                            }
+                            <li>Khuyến mãi <i>-</i> <span>0</span></li>
+                            <li>Tổng tiền <i>-</i> <span>@Model.Sum(m => m.ThanhTien).ToString("#,###") đồng</span></li>
+                        </ul>
+                    </div>
+                    <form action="@Url.Action("Order")" method="get">
+                        <div class="col-md-8 address_form">
+                            <h4>Địa chỉ giao hàng</h4>
+                            <section class="creditly-wrapper wrapper">
+                                <div class="information-wrapper">
+                                    <div class="first-row form-group">
+                                        <div class="controls">
+                                            <label class="control-label">Họ và tên: </label>
+                                            <input class="billing-address-name form-control" type="text" name="Name" placeholder="Full name">
+                                        </div>
+                                        <div class="card_number_grids">
+                                            <div class="card_number_grid_left">
+                                                <div class="controls">
+                                                    <label class="control-label">Số điện thoại:</label>
+                                                    <input class="form-control" type="text" name="Phone" id="Phone" placeholder="Mobile number">
+                                                </div>
+                                            </div>
+                                            <div class="card_number_grid_right">
+                                                <div class="controls">
+                                                    <label class="control-label">Địa chỉ: </label>
+                                                    <input class="form-control" type="text" placeholder="Landmark">
+                                                </div>
+                                            </div>
+                                            <div class="clear"> </div>
+                                        </div>
+                                        <div class="controls">
+                                            <label class="control-label">Email: </label>
+                                            <input class="form-control" type="text" name="Email" id="Email" placeholder="Town/City">
+                                        </div>
+                                        <button type="submit" class="button button3">Đặt hàng</button>
+                                    </div>
+                                    
+                                </div>
+                            </section>
+                        </div>
+                    </form>
+                    <div class="clearfix"> </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+    <style>
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button3 {
+            background-color: white;
+            color: black;
+            border: 2px solid #FC636B;
+        }
+
+            .button3:hover {
+                background-color: #FC636B;
+                color: white;
+            }
+    </style>

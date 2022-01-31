@@ -1,0 +1,43 @@
+﻿@model DoAnCSDL_WebBanGiay.Models.SoLuongSize
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SoLuongSize</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BangSize.ChuThich)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BangSize.ChuThich)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SanPham.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanPham.TenSP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaSizeSP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

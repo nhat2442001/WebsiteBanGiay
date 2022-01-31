@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="209f4b1f853b4a60925c65ad502dedb6" Name="Diagram1">
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.BangSize" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.BinhLuan" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.ChiTietDonDatHang" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.ChiTietPhieuNhap" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.DonDatHang" Width="1.5" PointX="6" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.DongGiay" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.KhachHang" Width="1.5" PointX="3.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.LoaiThanhVien" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.PhieuNhap" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.SanPham" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.SoLuongSize" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.sysdiagram" Width="1.5" PointX="7.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_WebBanHangModel.ThanhVien" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_ChiTietDonDatHang_BangSize" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_ChiTietPhieuNhap_Size" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_SoLuongSize_BangSize" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_BinhLuan_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_BinhLuan_ThanhVien" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_ChiTietDonDatHang_DonDatHang" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_ChiTietDonDatHang_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_ChiTietDonDatHang_SoLuongSize" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_ChiTietPhieuNhap_PhieuNhap" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_ChiTietPhieuNhap_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_DonDatHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_SanPham_DongGiay" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_KhachHang_ThanhVien" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_ThanhVien_LoaiThanhVien" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_PhieuNhap_NhaCungCap" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_SanPham_NCC" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_WebBanHangModel.FK_SoLuongSize_SanPham" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

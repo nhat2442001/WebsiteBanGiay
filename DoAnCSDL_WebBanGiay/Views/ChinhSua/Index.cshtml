@@ -1,0 +1,157 @@
+﻿@model IEnumerable<DoAnCSDL_WebBanGiay.Models.SanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+<h2>Chỉnh sửa sản phẩm</h2>
+
+<p>
+    @Html.ActionLink("Thêm sản phẩm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayCapNhatGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhAnh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LuotBinhChon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LuotBinhLuan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLanMua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HangMoi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DongGiay.TenDongGiay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhaCungCap.TenNCC)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayCapNhatGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinhAnh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LuotBinhChon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LuotBinhLuan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLanMua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HangMoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DongGiay.TenDongGiay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NhaCungCap.TenNCC)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaSP }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+            </td>
+        </tr>
+    }
+
+</table>
+<!-- js -->
+<script type="text/javascript" src="~/Content/js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<!-- cart-js -->
+<script src="~/Content/js/minicart.js"></script>
+<script>
+    shoe.render();
+
+    shoe.cart.on('shoe_checkout', function (evt) {
+        var items, len, i;
+
+        if (this.subtotal() > 0) {
+            items = this.items();
+
+            for (i = 0, len = items.length; i < len; i++) { }
+        }
+    });
+</script>
+<!-- //cart-js -->
+<!-- /nav -->
+<script src="~/Content/js/modernizr-2.6.2.min.js"></script>
+<script src="~/Content/js/classie.js"></script>
+<script src="~/Content/js/demo1.js"></script>
+<!-- //nav -->
+<!--search-bar-->
+<script src="~/Content/js/search.js"></script>
+<!--//search-bar-->
+<!-- price range (top products) -->
+<script src="~/Content/js/jquery-ui.js"></script>
+<script>
+    //<![CDATA[
+    $(window).load(function () {
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 9000,
+            values: [50, 6000],
+            slide: function (event, ui) {
+                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            }
+        });
+        $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+
+    }); //]]>
+</script>
+<!-- //price range (top products) -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="~/Content/js/move-top.js"></script>
+<script type="text/javascript" src="~/Content/js/easing.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+    });
+</script>
+<!-- //end-smoth-scrolling -->
+<script type="text/javascript" src="~/Content/js/bootstrap-3.1.1.min.js"></script>
+

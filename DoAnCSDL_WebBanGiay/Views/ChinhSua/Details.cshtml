@@ -1,0 +1,107 @@
+﻿@model DoAnCSDL_WebBanGiay.Models.SanPham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SanPham</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayCapNhatGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayCapNhatGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhAnh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhAnh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LuotBinhChon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LuotBinhChon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LuotBinhLuan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LuotBinhLuan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLanMua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLanMua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HangMoi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HangMoi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DongGiay.TenDongGiay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DongGiay.TenDongGiay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhaCungCap.TenNCC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhaCungCap.TenNCC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaSP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
